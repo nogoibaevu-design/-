@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Регулярки · Реестр</title>
+  <meta name="description" content="Регулярные выражения для проверки ФИО, телефона и почты, с разбором по частям.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <div class="progress"></div>
+
+  <header class="header">
+    <div class="wrap">
+      <input class="menu-check hidden-input" type="checkbox" id="menu" aria-label="Меню">
+      <a class="logo" href="index.html"><strong>Реестр</strong><small>Оскар</small></a>
+      <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="ledger.html">Счёт</a>
+        <a href="ceremony.html">Правила</a>
+        <a href="quiz.html">Викторина</a>
+        <a href="contact.html">Форма</a>
+        <a href="regex.html" class="active">Регулярки</a>
+        <a href="about.html">О сайте</a>
+      </nav>
+      <label class="burger" for="menu" title="Меню">☰</label>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap page">
+      <p class="label">Проверка данных</p>
+      <h1>Регулярные выражения на сайте</h1>
+      <p class="lead">Регулярное выражение описывает, как должна выглядеть строка. Здесь три выражения: для ФИО, телефона и почты. Они применяются в форме на странице <a href="contact.html" style="color:var(--gold)">«Форма»</a>.</p>
+
+      <h2>Как это подключено</h2>
+      <p>Каждое выражение записано в атрибуте <code>pattern</code> поля ввода. Браузер сам проверяет, подходит ли введённый текст целиком, поэтому знаки <code>^</code> и <code>$</code> в начале и в конце писать не нужно. Результат проверки доступен в CSS через псевдоклассы <code>:valid</code> и <code>:invalid</code>. С их помощью рамка поля становится зелёной или красной, а под полем появляется нужная подсказка. Пустое поле не подсвечивается, потому что правило срабатывает только при <code>:not(:placeholder-shown)</code>.</p>
+
+
+      <section class="rx-card">
+        <h3>ФИО</h3>
+        <code class="rx-code">[А-ЯЁ][а-яё]+(?:-[А-ЯЁ][а-яё]+)?(?: [А-ЯЁ][а-яё]+(?:-[А-ЯЁ][а-яё]+)?){2}</code>
+        <table class="rx-parts"><tbody><tr><td>[А-ЯЁ]</td><td>одна заглавная русская буква</td></tr><tr><td>[а-яё]+</td><td>одна или больше строчных русских букв</td></tr><tr><td>(?:-[А-ЯЁ][а-яё]+)?</td><td>необязательная вторая часть через дефис, для двойных фамилий</td></tr><tr><td>(?: ...){2}</td><td>ещё ровно два слова через пробел: имя и отчество</td></tr></tbody></table>
+        <div class="rx-examples">
+          <div class="yes"><h4>Подходит</h4><ul><li>Ногойбаев Умар Алтынбекович</li><li>Петрова-Водкина Анна Ивановна</li><li>Ёлкин Пётр Сергеевич</li></ul></div>
+          <div class="no"><h4>Не подходит</h4><ul><li>ногойбаев умар алтынбекович</li><li>Ногойбаев Умар</li><li>Nogoibaev Umar Altynbekovich</li><li>Ногойбаев  Умар Алтынбекович</li></ul></div>
+        </div><p class="note">Первое слово это фамилия, второе имя, третье отчество. Слова в нижнем регистре и пропущенное отчество не проходят.</p>
+      </section>
+
+      <section class="rx-card">
+        <h3>Номер телефона</h3>
+        <code class="rx-code">\+?996[ \-]?\d{3}[ \-]?\d{3}[ \-]?\d{3}</code>
+        <table class="rx-parts"><tbody><tr><td>\+?</td><td>необязательный плюс в начале</td></tr><tr><td>996</td><td>код Кыргызстана</td></tr><tr><td>[ \-]?</td><td>необязательный пробел или дефис между группами</td></tr><tr><td>\d{3}</td><td>ровно три цифры; группа повторяется трижды, всего девять цифр после кода</td></tr></tbody></table>
+        <div class="rx-examples">
+          <div class="yes"><h4>Подходит</h4><ul><li>996502188700</li><li>+996 502 188 700</li><li>996-502-188-700</li></ul></div>
+          <div class="no"><h4>Не подходит</h4><ul><li>502188700</li><li>+996 502 18 87 00</li><li>99650218870</li><li>+7 502 188 700</li></ul></div>
+        </div><p class="note">Всего в номере 12 цифр: код 996 и девять цифр абонента.</p>
+      </section>
+
+      <section class="rx-card">
+        <h3>Электронная почта</h3>
+        <code class="rx-code">[A-Za-z0-9._%+\-]+@[A-Za-z0-9\-]+(?:\.[A-Za-z0-9\-]+)*\.[A-Za-z]{2,}</code>
+        <table class="rx-parts"><tbody><tr><td>[A-Za-z0-9._%+\-]+</td><td>локальная часть до знака @: латиница, цифры и символы . _ % + -</td></tr><tr><td>@</td><td>обязательный знак @</td></tr><tr><td>[A-Za-z0-9\-]+</td><td>имя домена</td></tr><tr><td>(?:\.[A-Za-z0-9\-]+)*</td><td>необязательные поддомены через точку</td></tr><tr><td>\.[A-Za-z]{2,}</td><td>доменная зона из двух и более букв, например kg или com</td></tr></tbody></table>
+        <div class="rx-examples">
+          <div class="yes"><h4>Подходит</h4><ul><li>nogoibaev_u@iuca.kg</li><li>ivan.petrov@mail.ru</li><li>a-b@sub.domain.com</li></ul></div>
+          <div class="no"><h4>Не подходит</h4><ul><li>nogoibaev_u@iuca</li><li>@iuca.kg</li><li>nogoibaev u@iuca.kg</li><li>user@@mail.ru</li></ul></div>
+        </div>
+      </section>
+
+      <h2>Как проверить самому</h2>
+      <p>Откройте <a href="contact.html" style="color:var(--gold)">форму</a> и введите данные из примеров. Подходящие значения подсветятся зелёным, неподходящие красным, а кнопка «Отправить» останется неактивной, пока хотя бы одно поле неверно.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>Реестр · фильмы с наибольшим числом «Оскаров» · Ногойбаев Умар Алтынбекович</p>
+      <p><a href="#top">Наверх ↑</a></p>
+    </div>
+  </footer>
+  <script src="js/animations.js"></script>
+</body>
+</html>

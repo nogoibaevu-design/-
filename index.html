@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Реестр: фильмы-рекордсмены «Оскара»</title>
+  <meta name="description" content="Девять фильмов, получивших больше всего «Оскаров»: награды, актёры, трейлеры и оценки.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <div class="progress"></div>
+
+  <header class="header">
+    <div class="wrap">
+      <input class="menu-check hidden-input" type="checkbox" id="menu" aria-label="Меню">
+      <a class="logo" href="index.html"><strong>Реестр</strong><small>Оскар</small></a>
+      <nav class="nav">
+        <a href="index.html" class="active">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="ledger.html">Счёт</a>
+        <a href="ceremony.html">Правила</a>
+        <a href="quiz.html">Викторина</a>
+        <a href="contact.html">Форма</a>
+        <a href="regex.html">Регулярки</a>
+        <a href="about.html">О сайте</a>
+      </nav>
+      <label class="burger" for="menu" title="Меню">☰</label>
+    </div>
+  </header>
+
+  <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Бен-Гур</span><span>Титаник</span><span>Властелин колец: Возвращение короля</span><span>Вестсайдская история</span><span>Жижи</span><span>Последний император</span><span>Английский пациент</span><span>Унесённые ветром</span><span>Миллионер из трущоб</span><span>Бен-Гур</span><span>Титаник</span><span>Властелин колец: Возвращение короля</span><span>Вестсайдская история</span><span>Жижи</span><span>Последний император</span><span>Английский пациент</span><span>Унесённые ветром</span><span>Миллионер из трущоб</span></div></div>
+
+  <main class="listing">
+    <div class="wrap">
+      <section class="hero">
+        <div>
+          <p class="label">1939 — 2008</p>
+          <h1>Одиннадцать «Оскаров». <em>Три фильма</em> дошли до этой отметки.</h1>
+          <p>«Бен-Гур», «Титаник» и «Возвращение короля» получили по 11 статуэток. Ниже ещё шесть фильмов с рекордами: 10, 9 и 8 наград. Здесь считаем только награды, качество фильмов никто не оценивает.</p>
+          <a class="btn" href="#films">Смотреть фильмы</a>
+        </div>
+        <div class="big-number" aria-hidden="true">11<small>статуэток, рекорд</small></div>
+      </section>
+
+      <div class="stats">
+        <div><b>9</b><span>фильмов в списке</span></div>
+        <div><b>86</b><span>«Оскаров» на всех</span></div>
+        <div><b>69</b><span>лет между самым старым и самым новым</span></div>
+      </div>
+
+      <input class="hidden-input" type="radio" name="filter" id="f-all" checked>
+      <input class="hidden-input" type="radio" name="filter" id="f-11">
+      <input class="hidden-input" type="radio" name="filter" id="f-10">
+      <input class="hidden-input" type="radio" name="filter" id="f-9">
+      <input class="hidden-input" type="radio" name="filter" id="f-8">
+      <input class="hidden-input" type="radio" name="sort" id="s-wins" checked>
+      <input class="hidden-input" type="radio" name="sort" id="s-year">
+      <input class="hidden-input" type="radio" name="sort" id="s-name">
+      <input class="hidden-input" type="radio" name="sort" id="s-rating">
+
+      <div class="controls" id="films">
+        <div class="group">
+          <span>Показать:</span>
+          <label class="chip" for="f-all">Все</label>
+          <label class="chip" for="f-11">11 наград</label>
+          <label class="chip" for="f-10">10</label>
+          <label class="chip" for="f-9">9</label>
+          <label class="chip" for="f-8">8</label>
+        </div>
+        <div class="group">
+          <span>Порядок:</span>
+          <label class="chip" for="s-wins">По наградам</label>
+          <label class="chip" for="s-year">По году</label>
+          <label class="chip" for="s-name">По алфавиту</label>
+          <label class="chip" for="s-rating">По IMDb</label>
+        </div>
+      </div>
+
+      <!-- Чтобы показать обложки, добавьте класс covers-->
+        <ol class="film-list covers">
+        <li data-wins="11" style="--o-wins:1;--o-year:3;--o-name:2;--o-rating:3">
+          <a class="poster" href="ben-hur.html" style="--h:42">
+            <img class="cover" src="img/covers/ben-hur.jpg" alt="" loading="lazy">
+            <span class="shade"></span>
+            <span class="top"><span>1959</span><span>№ 01</span></span>
+            <span class="num">11<small>из 12 номинаций</small></span>
+            <span class="bottom"><strong>Бен-Гур</strong><span>Уильям Уайлер</span></span>
+          </a>
+        </li>
+        <li data-wins="11" style="--o-wins:2;--o-year:7;--o-name:8;--o-rating:5">
+          <a class="poster" href="titanic.html" style="--h:215">
+            <img class="cover" src="img/covers/titanic.jpg" alt="" loading="lazy">
+            <span class="shade"></span>
+            <span class="top"><span>1997</span><span>№ 02</span></span>
+            <span class="num">11<small>из 14 номинаций</small></span>
+            <span class="bottom"><strong>Титаник</strong><span>Джеймс Кэмерон</span></span>
+          </a>
+        </li>
+        <li data-wins="11" style="--o-wins:3;--o-year:8;--o-name:4;--o-rating:1">
+          <a class="poster" href="return-of-the-king.html" style="--h:145">
+            <img class="cover" src="img/covers/return-of-the-king.jpg" alt="" loading="lazy">
+            <span class="shade"></span>
+            <span class="top"><span>2003</span><span>№ 03</span></span>
+            <span class="num">11<small>из 11 номинаций</small></span>
+            <span class="bottom"><strong>Властелин колец: Возвращение короля</strong><span>Питер Джексон</span></span>
+          </a>
+        </li>
+        <li data-wins="10" style="--o-wins:4;--o-year:4;--o-name:3;--o-rating:7">
+          <a class="poster" href="west-side-story.html" style="--h:285">
+            <img class="cover" src="img/covers/west-side-story.jpg" alt="" loading="lazy">
+            <span class="shade"></span>
+            <span class="top"><span>1961</span><span>№ 04</span></span>
+            <span class="num">10<small>из 11 номинаций</small></span>
+            <span class="bottom"><strong>Вестсайдская история</strong><span>Роберт Уайз, Джером Роббинс</span></span>
+          </a>
+        </li>
+        <li data-wins="9" style="--o-wins:5;--o-year:2;--o-name:5;--o-rating:9">
+          <a class="poster" href="gigi.html" style="--h:330">
+            <img class="cover" src="img/covers/gigi.jpg" alt="" loading="lazy">
+            <span class="shade"></span>
+            <span class="top"><span>1958</span><span>№ 05</span></span>
+            <span class="num">9<small>из 9 номинаций</small></span>
+            <span class="bottom"><strong>Жижи</strong><span>Винсенте Миннелли</span></span>
+          </a>
+        </li>
+        <li data-wins="9" style="--o-wins:6;--o-year:5;--o-name:7;--o-rating:6">
+          <a class="poster" href="last-emperor.html" style="--h:355">
+            <img class="cover" src="img/covers/last-emperor.jpg" alt="" loading="lazy">
+            <span class="shade"></span>
+            <span class="top"><span>1987</span><span>№ 06</span></span>
+            <span class="num">9<small>из 9 номинаций</small></span>
+            <span class="bottom"><strong>Последний император</strong><span>Бернардо Бертолуччи</span></span>
+          </a>
+        </li>
+        <li data-wins="9" style="--o-wins:7;--o-year:6;--o-name:1;--o-rating:8">
+          <a class="poster" href="english-patient.html" style="--h:62">
+            <img class="cover" src="img/covers/english-patient.jpg" alt="" loading="lazy">
+            <span class="shade"></span>
+            <span class="top"><span>1996</span><span>№ 07</span></span>
+            <span class="num">9<small>из 12 номинаций</small></span>
+            <span class="bottom"><strong>Английский пациент</strong><span>Энтони Мингелла</span></span>
+          </a>
+        </li>
+        <li data-wins="8" style="--o-wins:8;--o-year:1;--o-name:9;--o-rating:2">
+          <a class="poster" href="gone-with-the-wind.html" style="--h:22">
+            <img class="cover" src="img/covers/gone-with-the-wind.jpg" alt="" loading="lazy">
+            <span class="shade"></span>
+            <span class="top"><span>1939</span><span>№ 08</span></span>
+            <span class="num">8<small>из 13 номинаций</small></span>
+            <span class="bottom"><strong>Унесённые ветром</strong><span>Виктор Флеминг</span></span>
+          </a>
+        </li>
+        <li data-wins="8" style="--o-wins:9;--o-year:9;--o-name:6;--o-rating:4">
+          <a class="poster" href="slumdog-millionaire.html" style="--h:175">
+            <img class="cover" src="img/covers/slumdog-millionaire.jpg" alt="" loading="lazy">
+            <span class="shade"></span>
+            <span class="top"><span>2008</span><span>№ 09</span></span>
+            <span class="num">8<small>из 10 номинаций</small></span>
+            <span class="bottom"><strong>Миллионер из трущоб</strong><span>Дэнни Бойл</span></span>
+          </a>
+        </li>
+      </ol>
+
+      <section class="three">
+        <div>
+          <p class="label">Как читать</p>
+          <p>В списке только конкурсные награды. Две почётные статуэтки «Унесённых ветром» сюда не входят, поэтому у фильма стоит 8.</p>
+        </div>
+        <div>
+          <p class="label">Что на страницах</p>
+          <p>У каждого фильма есть краткий рассказ, актёры, оценки на трёх сайтах, трейлер и таблица наград.</p>
+        </div>
+        <div>
+          <p class="label">Что ещё есть</p>
+          <p>Сводная таблица, правила подсчёта, викторина и форма, которую проверяют регулярные выражения.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>Реестр · фильмы с наибольшим числом «Оскаров» · Ногойбаев Умар Алтынбекович</p>
+      <p><a href="#top">Наверх ↑</a></p>
+    </div>
+  </footer>
+  <script src="js/animations.js"></script>
+</body>
+</html>

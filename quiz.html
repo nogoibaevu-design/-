@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Викторина · Реестр</title>
+  <meta name="description" content="Восемь вопросов про фильмы-рекордсмены «Оскара».">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <div class="progress"></div>
+
+  <header class="header">
+    <div class="wrap">
+      <input class="menu-check hidden-input" type="checkbox" id="menu" aria-label="Меню">
+      <a class="logo" href="index.html"><strong>Реестр</strong><small>Оскар</small></a>
+      <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="ledger.html">Счёт</a>
+        <a href="ceremony.html">Правила</a>
+        <a href="quiz.html" class="active">Викторина</a>
+        <a href="contact.html">Форма</a>
+        <a href="regex.html">Регулярки</a>
+        <a href="about.html">О сайте</a>
+      </nav>
+      <label class="burger" for="menu" title="Меню">☰</label>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap page">
+      <p class="label">Проверьте себя</p>
+      <h1>Викторина</h1>
+      <p class="lead">Восемь вопросов по материалам сайта. После выбора сразу показывается правильный ответ, менять его нельзя. Счёт внизу страницы растёт сам.</p>
+
+      <div class="quiz">
+
+      <section class="q">
+        <p class="num">Вопрос 1 из 8</p>
+        <h2>Какой фильм выиграл все 11 номинаций, на которые был выдвинут?</h2>
+        <div class="opts">
+          <input class="opt bad hidden-input" type="radio" name="q1" id="q1-0">
+          <label class="a" for="q1-0">Бен-Гур</label>
+          <input class="opt bad hidden-input" type="radio" name="q1" id="q1-1">
+          <label class="a" for="q1-1">Титаник</label>
+          <input class="opt ok hidden-input" type="radio" name="q1" id="q1-2">
+          <label class="a r" for="q1-2">Властелин колец: Возвращение короля</label>
+          <input class="opt bad hidden-input" type="radio" name="q1" id="q1-3">
+          <label class="a" for="q1-3">Жижи</label>
+        </div>
+        <p class="why">У «Возвращения короля» 11 номинаций и 11 побед. «Бен-Гур» и «Титаник» тоже взяли по 11, но номинаций у них было больше.</p>
+      </section>
+
+      <section class="q">
+        <p class="num">Вопрос 2 из 8</p>
+        <h2>Сколько «Оскаров» получил «Бен-Гур» в 1960 году?</h2>
+        <div class="opts">
+          <input class="opt bad hidden-input" type="radio" name="q2" id="q2-0">
+          <label class="a" for="q2-0">8</label>
+          <input class="opt bad hidden-input" type="radio" name="q2" id="q2-1">
+          <label class="a" for="q2-1">9</label>
+          <input class="opt bad hidden-input" type="radio" name="q2" id="q2-2">
+          <label class="a" for="q2-2">10</label>
+          <input class="opt ok hidden-input" type="radio" name="q2" id="q2-3">
+          <label class="a r" for="q2-3">11</label>
+        </div>
+        <p class="why">Одиннадцать из двенадцати. Проиграл только за адаптированный сценарий.</p>
+      </section>
+
+      <section class="q">
+        <p class="num">Вопрос 3 из 8</p>
+        <h2>Кто стал первой чернокожей обладательницей «Оскара» (за «Унесённых ветром»)?</h2>
+        <div class="opts">
+          <input class="opt ok hidden-input" type="radio" name="q3" id="q3-0">
+          <label class="a r" for="q3-0">Хэтти Макдэниел</label>
+          <input class="opt bad hidden-input" type="radio" name="q3" id="q3-1">
+          <label class="a" for="q3-1">Вивьен Ли</label>
+          <input class="opt bad hidden-input" type="radio" name="q3" id="q3-2">
+          <label class="a" for="q3-2">Рита Морено</label>
+          <input class="opt bad hidden-input" type="radio" name="q3" id="q3-3">
+          <label class="a" for="q3-3">Оливия де Хэвилленд</label>
+        </div>
+        <p class="why">Хэтти Макдэниел получила награду за роль второго плана — Мамушки.</p>
+      </section>
+
+      <section class="q">
+        <p class="num">Вопрос 4 из 8</p>
+        <h2>Какой мюзикл получил 10 «Оскаров» — больше, чем любой другой мюзикл?</h2>
+        <div class="opts">
+          <input class="opt bad hidden-input" type="radio" name="q4" id="q4-0">
+          <label class="a" for="q4-0">Жижи</label>
+          <input class="opt ok hidden-input" type="radio" name="q4" id="q4-1">
+          <label class="a r" for="q4-1">Вестсайдская история</label>
+          <input class="opt bad hidden-input" type="radio" name="q4" id="q4-2">
+          <label class="a" for="q4-2">Моя прекрасная леди</label>
+          <input class="opt bad hidden-input" type="radio" name="q4" id="q4-3">
+          <label class="a" for="q4-3">Кабаре</label>
+        </div>
+        <p class="why">«Вестсайдская история» 1961 года: 10 побед из 11 номинаций.</p>
+      </section>
+
+      <section class="q">
+        <p class="num">Вопрос 5 из 8</p>
+        <h2>Кто получил сразу две статуэтки за «Миллионера из трущоб» — за музыку и за песню?</h2>
+        <div class="opts">
+          <input class="opt bad hidden-input" type="radio" name="q5" id="q5-0">
+          <label class="a" for="q5-0">Дэнни Бойл</label>
+          <input class="opt bad hidden-input" type="radio" name="q5" id="q5-1">
+          <label class="a" for="q5-1">Саймон Бофой</label>
+          <input class="opt ok hidden-input" type="radio" name="q5" id="q5-2">
+          <label class="a r" for="q5-2">А. Р. Рахман</label>
+          <input class="opt bad hidden-input" type="radio" name="q5" id="q5-3">
+          <label class="a" for="q5-3">Энтони Дод Мэнтл</label>
+        </div>
+        <p class="why">Композитор А. Р. Рахман. Песня называется «Jai Ho».</p>
+      </section>
+
+      <section class="q">
+        <p class="num">Вопрос 6 из 8</p>
+        <h2>Какую песню из «Титаника» наградили «Оскаром»?</h2>
+        <div class="opts">
+          <input class="opt bad hidden-input" type="radio" name="q6" id="q6-0">
+          <label class="a" for="q6-0">Nearer, My God, to Thee</label>
+          <input class="opt ok hidden-input" type="radio" name="q6" id="q6-1">
+          <label class="a r" for="q6-1">My Heart Will Go On</label>
+          <input class="opt bad hidden-input" type="radio" name="q6" id="q6-2">
+          <label class="a" for="q6-2">Into the West</label>
+          <input class="opt bad hidden-input" type="radio" name="q6" id="q6-3">
+          <label class="a" for="q6-3">Thank Heaven for Little Girls</label>
+        </div>
+        <p class="why">«My Heart Will Go On» — музыка Джеймса Хорнера, слова Уилла Дженнингса, пела Селин Дион.</p>
+      </section>
+
+      <section class="q">
+        <p class="num">Вопрос 7 из 8</p>
+        <h2>Какую картину сняли внутри Запретного города в Пекине, и она выиграла все 9 своих номинаций?</h2>
+        <div class="opts">
+          <input class="opt bad hidden-input" type="radio" name="q7" id="q7-0">
+          <label class="a" for="q7-0">Английский пациент</label>
+          <input class="opt ok hidden-input" type="radio" name="q7" id="q7-1">
+          <label class="a r" for="q7-1">Последний император</label>
+          <input class="opt bad hidden-input" type="radio" name="q7" id="q7-2">
+          <label class="a" for="q7-2">Миллионер из трущоб</label>
+          <input class="opt bad hidden-input" type="radio" name="q7" id="q7-3">
+          <label class="a" for="q7-3">Жижи</label>
+        </div>
+        <p class="why">«Последний император» Бернардо Бертолуччи, 1987 год.</p>
+      </section>
+
+      <section class="q">
+        <p class="num">Вопрос 8 из 8</p>
+        <h2>Какой фильм в 2026 году установил рекорд по числу номинаций — 16?</h2>
+        <div class="opts">
+          <input class="opt bad hidden-input" type="radio" name="q8" id="q8-0">
+          <label class="a" for="q8-0">Одна битва за другой</label>
+          <input class="opt ok hidden-input" type="radio" name="q8" id="q8-1">
+          <label class="a r" for="q8-1">Грешники</label>
+          <input class="opt bad hidden-input" type="radio" name="q8" id="q8-2">
+          <label class="a" for="q8-2">Титаник</label>
+          <input class="opt bad hidden-input" type="radio" name="q8" id="q8-3">
+          <label class="a" for="q8-3">Ла-Ла Ленд</label>
+        </div>
+        <p class="why">«Грешники» обошли «Титаник», «Всё о Еве» и «Ла-Ла Ленд» с их 14 номинациями. По победам рекорд всё ещё 11.</p>
+      </section>
+
+        <section class="result">
+          <p class="label">Верных ответов</p>
+          <p class="score"></p>
+          <p>Чтобы пройти заново, откройте страницу ещё раз.</p>
+          <a class="btn" href="quiz.html">Начать сначала</a>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>Реестр · фильмы с наибольшим числом «Оскаров» · Ногойбаев Умар Алтынбекович</p>
+      <p><a href="#top">Наверх ↑</a></p>
+    </div>
+  </footer>
+  <script src="js/animations.js"></script>
+</body>
+</html>

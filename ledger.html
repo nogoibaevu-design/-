@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Счёт · Реестр</title>
+  <meta name="description" content="Сводная таблица: победы, номинации и оценки девяти фильмов.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <div class="progress"></div>
+
+  <header class="header">
+    <div class="wrap">
+      <input class="menu-check hidden-input" type="checkbox" id="menu" aria-label="Меню">
+      <a class="logo" href="index.html"><strong>Реестр</strong><small>Оскар</small></a>
+      <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="ledger.html" class="active">Счёт</a>
+        <a href="ceremony.html">Правила</a>
+        <a href="quiz.html">Викторина</a>
+        <a href="contact.html">Форма</a>
+        <a href="regex.html">Регулярки</a>
+        <a href="about.html">О сайте</a>
+      </nav>
+      <label class="burger" for="menu" title="Меню">☰</label>
+    </div>
+  </header>
+
+  <main class="ledger">
+    <div class="wrap page">
+      <p class="label">Сводка</p>
+      <h1>Все девять фильмов в одной таблице</h1>
+      <p class="lead">Вместе эти картины получили 86 конкурсных статуэток. Три остановились на 11, и выше пока никто не поднялся.</p>
+
+      <input class="hidden-input" type="radio" name="col" id="c-name">
+      <input class="hidden-input" type="radio" name="col" id="c-year">
+      <input class="hidden-input" type="radio" name="col" id="c-wins" checked>
+      <input class="hidden-input" type="radio" name="col" id="c-noms">
+      <input class="hidden-input" type="radio" name="col" id="c-share">
+      <input class="hidden-input" type="radio" name="col" id="c-imdb">
+      <input class="hidden-input" type="radio" name="col" id="c-kp">
+      <input class="hidden-input" type="radio" name="col" id="c-rt">
+      <input class="hidden-input" type="radio" name="dir" id="d-best" checked>
+      <input class="hidden-input" type="radio" name="dir" id="d-rev">
+
+      <div class="controls">
+        <div class="group">
+          <span>Сортировать по:</span>
+          <label class="chip" for="c-name">Фильм</label>
+          <label class="chip" for="c-year">Год</label>
+          <label class="chip" for="c-wins">Победы</label>
+          <label class="chip" for="c-noms">Номинации</label>
+          <label class="chip" for="c-share">Доля</label>
+          <label class="chip" for="c-imdb">IMDb</label>
+          <label class="chip" for="c-kp">Кинопоиск</label>
+          <label class="chip" for="c-rt">RT</label>
+        </div>
+        <div class="group">
+          <label class="chip" for="d-best">Сначала лучшие</label>
+          <label class="chip" for="d-rev">Наоборот</label>
+        </div>
+      </div>
+
+      <div class="table-box">
+        <div class="tbl">
+          <div class="trow thead">
+            <span>Фильм</span><span>Год</span><span>Победы</span><span>Номинации</span><span>Доля</span><span>IMDb</span><span>Кинопоиск</span><span>RT</span>
+          </div>
+          <a class="trow" href="ben-hur.html" style="--o-name:2;--o-year:3;--o-wins:1;--o-noms:3;--o-share:4;--o-imdb:3;--o-kp:4;--o-rt:7">
+            <span class="t-name">Бен-Гур</span>
+            <span>1959</span>
+            <span class="t-big">11</span>
+            <span>12</span>
+            <span>92%</span>
+            <span>8.1</span>
+            <span>8.1</span>
+            <span>87%</span>
+          </a>
+          <a class="trow" href="titanic.html" style="--o-name:8;--o-year:7;--o-wins:2;--o-noms:1;--o-share:7;--o-imdb:5;--o-kp:3;--o-rt:6">
+            <span class="t-name">Титаник</span>
+            <span>1997</span>
+            <span class="t-big">11</span>
+            <span>14</span>
+            <span>79%</span>
+            <span>7.9</span>
+            <span>8.4</span>
+            <span>88%</span>
+          </a>
+          <a class="trow" href="return-of-the-king.html" style="--o-name:4;--o-year:8;--o-wins:3;--o-noms:5;--o-share:1;--o-imdb:1;--o-kp:1;--o-rt:1">
+            <span class="t-name">Властелин колец: Возвращение короля</span>
+            <span>2003</span>
+            <span class="t-big">11</span>
+            <span>11</span>
+            <span>100%</span>
+            <span>9.0</span>
+            <span>8.7</span>
+            <span>94%</span>
+          </a>
+          <a class="trow" href="west-side-story.html" style="--o-name:3;--o-year:4;--o-wins:4;--o-noms:6;--o-share:5;--o-imdb:7;--o-kp:8;--o-rt:2">
+            <span class="t-name">Вестсайдская история</span>
+            <span>1961</span>
+            <span class="t-big">10</span>
+            <span>11</span>
+            <span>91%</span>
+            <span>7.6</span>
+            <span>7.2</span>
+            <span>92%</span>
+          </a>
+          <a class="trow" href="gigi.html" style="--o-name:5;--o-year:2;--o-wins:5;--o-noms:8;--o-share:2;--o-imdb:9;--o-kp:9;--o-rt:4">
+            <span class="t-name">Жижи</span>
+            <span>1958</span>
+            <span class="t-big">9</span>
+            <span>9</span>
+            <span>100%</span>
+            <span>6.6</span>
+            <span>6.4</span>
+            <span>90%</span>
+          </a>
+          <a class="trow" href="last-emperor.html" style="--o-name:7;--o-year:5;--o-wins:6;--o-noms:9;--o-share:3;--o-imdb:6;--o-kp:5;--o-rt:8">
+            <span class="t-name">Последний император</span>
+            <span>1987</span>
+            <span class="t-big">9</span>
+            <span>9</span>
+            <span>100%</span>
+            <span>7.7</span>
+            <span>7.9</span>
+            <span>86%</span>
+          </a>
+          <a class="trow" href="english-patient.html" style="--o-name:1;--o-year:6;--o-wins:7;--o-noms:4;--o-share:8;--o-imdb:8;--o-kp:6;--o-rt:9">
+            <span class="t-name">Английский пациент</span>
+            <span>1996</span>
+            <span class="t-big">9</span>
+            <span>12</span>
+            <span>75%</span>
+            <span>7.4</span>
+            <span>7.9</span>
+            <span>86%</span>
+          </a>
+          <a class="trow" href="gone-with-the-wind.html" style="--o-name:9;--o-year:1;--o-wins:8;--o-noms:2;--o-share:9;--o-imdb:2;--o-kp:2;--o-rt:5">
+            <span class="t-name">Унесённые ветром</span>
+            <span>1939</span>
+            <span class="t-big">8</span>
+            <span>13</span>
+            <span>62%</span>
+            <span>8.2</span>
+            <span>8.5</span>
+            <span>90%</span>
+          </a>
+          <a class="trow" href="slumdog-millionaire.html" style="--o-name:6;--o-year:9;--o-wins:9;--o-noms:7;--o-share:6;--o-imdb:4;--o-kp:7;--o-rt:3">
+            <span class="t-name">Миллионер из трущоб</span>
+            <span>2008</span>
+            <span class="t-big">8</span>
+            <span>10</span>
+            <span>80%</span>
+            <span>8.0</span>
+            <span>7.8</span>
+            <span>92%</span>
+          </a>
+        </div>
+      </div>
+      <p class="note">«Доля» показывает, сколько номинаций стали победами. RT это Rotten Tomatoes. Оценки на октябрь 2026 года, со временем они немного меняются.</p>
+
+      <h2>Победы наглядно</h2>
+      <div class="bars">
+        <div class="bar-row">
+          <span>Бен-Гур</span>
+          <div class="bar-track"><div class="bar-fill" style="--w:100%"></div></div>
+          <b>11</b>
+        </div>
+        <div class="bar-row">
+          <span>Титаник</span>
+          <div class="bar-track"><div class="bar-fill" style="--w:100%"></div></div>
+          <b>11</b>
+        </div>
+        <div class="bar-row">
+          <span>Властелин колец: Возвращение короля</span>
+          <div class="bar-track"><div class="bar-fill" style="--w:100%"></div></div>
+          <b>11</b>
+        </div>
+        <div class="bar-row">
+          <span>Вестсайдская история</span>
+          <div class="bar-track"><div class="bar-fill" style="--w:91%"></div></div>
+          <b>10</b>
+        </div>
+        <div class="bar-row">
+          <span>Жижи</span>
+          <div class="bar-track"><div class="bar-fill" style="--w:82%"></div></div>
+          <b>9</b>
+        </div>
+        <div class="bar-row">
+          <span>Последний император</span>
+          <div class="bar-track"><div class="bar-fill" style="--w:82%"></div></div>
+          <b>9</b>
+        </div>
+        <div class="bar-row">
+          <span>Английский пациент</span>
+          <div class="bar-track"><div class="bar-fill" style="--w:82%"></div></div>
+          <b>9</b>
+        </div>
+        <div class="bar-row">
+          <span>Унесённые ветром</span>
+          <div class="bar-track"><div class="bar-fill" style="--w:73%"></div></div>
+          <b>8</b>
+        </div>
+        <div class="bar-row">
+          <span>Миллионер из трущоб</span>
+          <div class="bar-track"><div class="bar-fill" style="--w:73%"></div></div>
+          <b>8</b>
+        </div>
+      </div>
+
+      <div class="two-cols">
+        <div>
+          <h2>Кто держит рекорд</h2>
+          <p>11 статуэток у «Бен-Гура» (1960), «Титаника» (1998) и «Возвращения короля» (2004). Только последний выиграл всё, на что был номинирован.</p>
+        </div>
+        <div>
+          <h2>Кого нет в списке</h2>
+          <p>По восемь «Оскаров» есть ещё у «Кабаре», «Ганди», «Амадея», «Моей прекрасной леди», «В порту» и «Отныне и во веки веков». Из восьмёрок на сайт взяты «Унесённые ветром» 1939 года и «Миллионер из трущоб» 2008-го, чтобы показать самый большой разрыв по времени.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>Реестр · фильмы с наибольшим числом «Оскаров» · Ногойбаев Умар Алтынбекович</p>
+      <p><a href="#top">Наверх ↑</a></p>
+    </div>
+  </footer>
+  <script src="js/animations.js"></script>
+</body>
+</html>

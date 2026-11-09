@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Форма · Реестр</title>
+  <meta name="description" content="Форма обратной связи с проверкой ФИО, телефона и почты регулярными выражениями.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <div class="progress"></div>
+
+  <header class="header">
+    <div class="wrap">
+      <input class="menu-check hidden-input" type="checkbox" id="menu" aria-label="Меню">
+      <a class="logo" href="index.html"><strong>Реестр</strong><small>Оскар</small></a>
+      <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="ledger.html">Счёт</a>
+        <a href="ceremony.html">Правила</a>
+        <a href="quiz.html">Викторина</a>
+        <a href="contact.html" class="active">Форма</a>
+        <a href="regex.html">Регулярки</a>
+        <a href="about.html">О сайте</a>
+      </nav>
+      <label class="burger" for="menu" title="Меню">☰</label>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap page">
+      <p class="label">Форма обратной связи</p>
+      <h1>Напишите о фильме</h1>
+      <p class="lead">Поля ФИО, телефона и почты проверяются регулярными выражениями прямо в браузере. Рамка поля становится зелёной или красной, пока вы печатаете.</p>
+
+      <div class="form-grid">
+        <form class="form" action="thanks.html" method="get">
+        <div class="field">
+          <label for="fio">ФИО <i>*</i></label>
+          <input id="fio" name="fio" type="text" required pattern="[А-ЯЁ][а-яё]+(?:-[А-ЯЁ][а-яё]+)?(?: [А-ЯЁ][а-яё]+(?:-[А-ЯЁ][а-яё]+)?){2}" title="Три слова с заглавной буквы, русскими буквами, через пробел"
+            placeholder="Ногойбаев Умар Алтынбекович" autocomplete="name">
+          <p class="msg hint">Фамилия Имя Отчество, русскими буквами, каждое слово с заглавной.</p>
+          <p class="msg good">✓ ФИО записано верно.</p>
+          <p class="msg bad">✕ Нужны три слова на русском, каждое с заглавной буквы, между ними один пробел.</p>
+        </div>
+        <div class="field">
+          <label for="phone">Номер телефона <i>*</i></label>
+          <input id="phone" name="phone" type="tel" required pattern="\+?996[ \-]?\d{3}[ \-]?\d{3}[ \-]?\d{3}" title="Номер Кыргызстана: 996 и ещё девять цифр, можно с плюсом, пробелами или дефисами"
+            placeholder="996502188700" autocomplete="tel">
+          <p class="msg hint">Код 996 и девять цифр. Можно с плюсом, пробелами или дефисами.</p>
+          <p class="msg good">✓ Номер подходит.</p>
+          <p class="msg bad">✕ Ожидается номер в формате 996 XXX XXX XXX, всего 12 цифр.</p>
+        </div>
+        <div class="field">
+          <label for="email">Электронная почта <i>*</i></label>
+          <input id="email" name="email" type="email" required pattern="[A-Za-z0-9._%+\-]+@[A-Za-z0-9\-]+(?:\.[A-Za-z0-9\-]+)*\.[A-Za-z]{2,}" title="Адрес электронной почты, например name@domain.kg"
+            placeholder="nogoibaev_u@iuca.kg" autocomplete="email">
+          <p class="msg hint">Адрес вида имя@домен.зона, без пробелов.</p>
+          <p class="msg good">✓ Адрес подходит.</p>
+          <p class="msg bad">✕ Проверьте адрес: нужны символ @, домен и зона (например, .kg или .com).</p>
+        </div>
+
+        <div class="field">
+          <label for="film">Любимый фильм из списка <i>*</i></label>
+          <select id="film" name="film" required><option value="" selected disabled>Выберите фильм</option><option>Бен-Гур</option><option>Титаник</option><option>Властелин колец: Возвращение короля</option><option>Вестсайдская история</option><option>Жижи</option><option>Последний император</option><option>Английский пациент</option><option>Унесённые ветром</option><option>Миллионер из трущоб</option></select>
+        </div>
+
+        <div class="field">
+          <label for="msg">Сообщение <i>*</i></label>
+          <textarea id="msg" name="msg" required minlength="10" maxlength="400" placeholder="Что вам понравилось или чего не хватает на сайте?"></textarea>
+          <p class="msg hint">От 10 до 400 символов.</p>
+          <p class="msg good">✓ Длина подходит.</p>
+          <p class="msg bad">✕ Напишите хотя бы 10 символов.</p>
+        </div>
+
+        <button class="btn submit" type="submit">Отправить</button>
+        <p class="form-note">Кнопка работает, когда все поля заполнены верно. Если поле не проходит проверку, браузер покажет подсказку.</p>
+        </form>
+
+        <aside class="side-card">
+          <p class="label">Автор сайта</p>
+          <dl>
+            <dt>ФИО</dt><dd>Ногойбаев Умар Алтынбекович</dd>
+            <dt>Телефон</dt><dd>996502188700</dd>
+            <dt>Почта</dt><dd>nogoibaev_u@iuca.kg</dd>
+          </dl>
+          <p style="margin-top:20px">Эти же данные подставлены в поля формы как примеры. Они проходят все три проверки. Подробности на странице <a href="regex.html" style="color:var(--gold)">«Регулярки»</a>.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>Реестр · фильмы с наибольшим числом «Оскаров» · Ногойбаев Умар Алтынбекович</p>
+      <p><a href="#top">Наверх ↑</a></p>
+    </div>
+  </footer>
+  <script src="js/animations.js"></script>
+</body>
+</html>

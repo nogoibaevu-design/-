@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>О сайте · Реестр</title>
+  <meta name="description" content="О проекте, источниках данных и составе списка.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <div class="progress"></div>
+
+  <header class="header">
+    <div class="wrap">
+      <input class="menu-check hidden-input" type="checkbox" id="menu" aria-label="Меню">
+      <a class="logo" href="index.html"><strong>Реестр</strong><small>Оскар</small></a>
+      <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="ledger.html">Счёт</a>
+        <a href="ceremony.html">Правила</a>
+        <a href="quiz.html">Викторина</a>
+        <a href="contact.html">Форма</a>
+        <a href="regex.html">Регулярки</a>
+        <a href="about.html" class="active">О сайте</a>
+      </nav>
+      <label class="burger" for="menu" title="Меню">☰</label>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap page">
+      <div class="about-grid">
+        <div>
+          <p class="label">О сайте</p>
+          <h1>Девять фильмов с рекордами «Оскара»</h1>
+          <p>Учебный проект на чистых HTML и CSS, без JavaScript. В нём собраны фильмы, которые получили больше всего конкурсных «Оскаров». У каждого есть своя страница с рассказом, актёрами, оценками, трейлером и списком наград.</p>
+          <p>Награды и имена можно сверить в базе данных Американской киноакадемии (oscars.org). Оценки взяты с IMDb, Кинопоиска и Rotten Tomatoes на октябрь 2026 года. Трейлеры подключены с YouTube.</p>
+          <p>Афиши на сайте нарисованы стилями. Это не официальные постеры, а карточки с числом наград и цветом, который выбран для каждого фильма.</p>
+
+          <h2>Что внутри</h2>
+          <p>Главная с афишами, фильтром по числу наград и сортировкой. Девять страниц фильмов. Сводная таблица с сортировкой по любому столбцу. Правила подсчёта, викторина, форма с проверкой регулярными выражениями и страница с разбором этих выражений. Всё работает на радиокнопках и CSS-селекторах.</p>
+        </div>
+        <aside class="side-card">
+          <p class="label">Состав списка</p>
+          <ul>
+            <li>3 фильма по 11</li>
+            <li>1 фильм по 10</li>
+            <li>3 фильма по 9</li>
+            <li>2 фильма по 8</li>
+          </ul>
+          <p>Рекорд по числу побед пока остаётся на отметке 11. Его держат «Бен-Гур», «Титаник» и «Возвращение короля».</p>
+          <dl>
+            <dt>Автор</dt><dd>Ногойбаев Умар Алтынбекович</dd>
+            <dt>Почта</dt><dd>nogoibaev_u@iuca.kg</dd>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>Реестр · фильмы с наибольшим числом «Оскаров» · Ногойбаев Умар Алтынбекович</p>
+      <p><a href="#top">Наверх ↑</a></p>
+    </div>
+  </footer>
+  <script src="js/animations.js"></script>
+</body>
+</html>
